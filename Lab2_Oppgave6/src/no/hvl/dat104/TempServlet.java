@@ -12,27 +12,29 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class TemperaturOmregner
+ * 
+ * @author Kristoffer-Andre Kalliainen
  */
 @WebServlet("/result")
 public class TempServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		TempOmregner to = new TempOmregner();
+
+		String enhet = to.skjekkInputEnhet(request.getParameter("enhet"));
+		Double temp = to.skjekkInputTemperatur(request.getParameter("temp"));
 		
-		String enhet = request.getParameter("enhet");
-		double temp = to.skjekkInputTemperatur(request.getParameter("temp"));
-		
-		
-		DecimalFormat df = new DecimalFormat("####0.00");
-		String resultat = df.format(to.regnTemperatur(temp, enhet));
+		String resultat = to.regnTemperatur(temp, enhet);
 		
 		response.setContentType("text/html; charset=ISO-8859-1");
 		PrintWriter out = response.getWriter();
-		
+
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<head>");
@@ -41,12 +43,10 @@ public class TempServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>Temperaturomregning resultat</h1>");
-		out.println("<p>" + temp + " ºC = " + resultat + "  ºF</p>");
+		out.println("<p>" + temp.toString() + " ºC = " + resultat + "  ºF</p>");
 		out.println("<p><a href=\"/lab26\">En gang til</a></p>");
 		out.println("</body>");
 		out.println("</html>");
 	}
-	
-	
-	
+
 }
