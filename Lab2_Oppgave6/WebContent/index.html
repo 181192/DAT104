@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Temperaturomregning</title>
+</head>
+<body>
+<form action="result" method="GET">
+		<fieldset>
+		<legend>Temperaturomregning</legend>
+			<p>
+				Temperatur: 
+				<input 
+					type="number" 
+					name="temp"
+					min="0" 
+					placeholder="Temperatur"
+					required
+					oninvalid="this.setCustomValidity('Vennligst oppgi en gyldig temperatur for å omregne.')" 
+					onchange="this.setCustomValidity('')" 
+				>
+			</p>
+			<p>
+				<input type="radio"	name="enhet" value="celsius">Celsius til Fahrenheit<br>
+				<input type="radio" name="enhet" value="fahrenheit">Fahrenheit til Celsius<br>
+			</p>
+			<p><input type="submit" value="Regn om"></p>
+		</fieldset>
+	</form>
+</body>
+</html>
