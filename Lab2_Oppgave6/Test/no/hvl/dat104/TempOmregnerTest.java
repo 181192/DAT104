@@ -14,10 +14,10 @@ import org.junit.Test;
  */
 public class TempOmregnerTest {
 	private TempOmregner to;
-	private String t1 = "27.40";
-	private String t2 = "81.32";
+	private String t1 = "27.4";
+	private String t2 = "81.3";
 	private Double d1 = 27.4;
-	private Double d2 = 81.32;
+	private Double d2 = 81.3;
 	private String C = "celsius";
 	private String F = "fahrenheit";
 
