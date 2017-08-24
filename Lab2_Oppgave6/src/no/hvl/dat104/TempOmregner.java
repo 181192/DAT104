@@ -20,17 +20,14 @@ public class TempOmregner {
 	 * @throws IllegalArgumentException
 	 *             Kaster exception hvis strenger er tom eller null.
 	 */
-	public Double skjekkInputTemperatur(String temp) throws IllegalArgumentException {
+	public Double skjekkInputTemperatur(String temp) 
+			throws IllegalArgumentException {
 		Double t = 0.0;
-		if (temp == null || temp == "") {
-			throw new IllegalArgumentException("Temp input er tom");
+		if (temp == null) {
+			throw new IllegalArgumentException();
 		}
 
-		try {
-			t = Double.parseDouble(temp);
-		} catch (NumberFormatException nfe) {
-			System.err.println("Temperatur input: " + nfe.getMessage());
-		}
+		t = Double.parseDouble(temp);
 
 		return t;
 	}
@@ -46,7 +43,7 @@ public class TempOmregner {
 	 */
 	public String skjekkInputEnhet(String enhet) throws IllegalArgumentException {
 		if (enhet == null || enhet == "") {
-			throw new IllegalArgumentException("Enhet input er tom");
+			throw new IllegalArgumentException();
 		}
 
 		return enhet;
@@ -62,7 +59,7 @@ public class TempOmregner {
 	 * @return Temperaturen omregnet til enten Celsius eller Fahrenheit
 	 */
 	public String regnTemperatur(Double temp, String enhet) {
-		DecimalFormat df = new DecimalFormat("####0.00");
+		DecimalFormat df = new DecimalFormat("####0.0");
 		Double svar;
 		if (enhet.equals("celsius")) {
 			svar = fraCelsiusTilFahrenheit(temp);
