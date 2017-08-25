@@ -12,44 +12,6 @@ import java.text.DecimalFormat;
 public class TempOmregner {
 
 	/**
-	 * Skjekker input for temperatur
-	 * 
-	 * @param temp
-	 *            Temperatur som en streng
-	 * @return Temperaturen som en Double
-	 * @throws IllegalArgumentException
-	 *             Kaster exception hvis strenger er tom eller null.
-	 */
-	public Double skjekkInputTemperatur(String temp) 
-			throws IllegalArgumentException {
-		Double t = 0.0;
-		if (temp == null) {
-			throw new IllegalArgumentException();
-		}
-
-		t = Double.parseDouble(temp);
-
-		return t;
-	}
-
-	/**
-	 * Skjekker input for temperatur enhet
-	 * 
-	 * @param enhet
-	 *            Temperatur enhet
-	 * @return Lovlig temperatur type
-	 * @throws IllegalArgumentException
-	 *             Kaster exception hvis strengen er tom eller null.
-	 */
-	public String skjekkInputEnhet(String enhet) throws IllegalArgumentException {
-		if (enhet == null || enhet == "") {
-			throw new IllegalArgumentException();
-		}
-
-		return enhet;
-	}
-
-	/**
 	 * Regner ut temperaturen, ut ifra hvilken type temperatur enhet som gies.
 	 * 
 	 * @param temp
@@ -58,13 +20,14 @@ public class TempOmregner {
 	 *            Temperatur enheten temperaturen oppgies i
 	 * @return Temperaturen omregnet til enten Celsius eller Fahrenheit
 	 */
-	public String regnTemperatur(Double temp, String enhet) {
+	public String regnTemperatur(String temp, String enhet) {
+		Double tempD = Double.parseDouble(temp);
 		DecimalFormat df = new DecimalFormat("####0.0");
 		Double svar;
 		if (enhet.equals("celsius")) {
-			svar = fraCelsiusTilFahrenheit(temp);
+			svar = fraCelsiusTilFahrenheit(tempD);
 		} else {
-			svar = fraFahrenheitTilCelsius(temp);
+			svar = fraFahrenheitTilCelsius(tempD);
 		}
 		return df.format(svar).replace(",", ".");
 	}

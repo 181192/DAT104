@@ -18,8 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 public class TempServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private PrintWriter out;
-	private String enhet;
-	private Double temp;
 	private String resultat;
 
 	/**
@@ -29,6 +27,11 @@ public class TempServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		TempOmregner to = new TempOmregner();
+		Validator validator = new Validator();
+		
+		String temp = request.getParameter("temp");
+		String enhet = request.getParameter("enhet");
+		
 		response.setContentType("text/html; charset=ISO-8859-1");
 		out = response.getWriter();
 		
@@ -40,24 +43,25 @@ public class TempServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		
-		try {
-			enhet = to.skjekkInputEnhet(request.getParameter("enhet"));
-			temp = to.skjekkInputTemperatur(request.getParameter("temp"));
-
+		if (validator.isValidTemperatur(temp) && validator.isValidTempUnit(enhet)) {
 			resultat = to.regnTemperatur(temp, enhet);
-
-			
 			out.println("<h1>Temperaturomregning resultat</h1>");
 			out.println("<p>" + temp.toString() + " ºC = " + resultat + "  ºF</p>");
 			out.println("<p><a href=\"/lab26\">En gang til</a></p>");
-			
-			
-		} catch (Exception e) {
+		} else {
 			feilMelding();
-		} 
+		}
 		out.println("</body>");
 		out.println("</html>");
 
+	}
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 	private void feilMelding() {
