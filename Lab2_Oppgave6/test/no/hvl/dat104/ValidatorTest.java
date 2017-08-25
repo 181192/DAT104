@@ -15,10 +15,11 @@ import org.junit.Test;
  */
 public class ValidatorTest {
 	private Validator v;
-	private String t1 = "27.4";
-	private String t2 = "81.3";
-	private String C = "celsius";
-	private String F = "fahrenheit";
+	private String v0 = "27.4";
+	private String v1 = "2";
+	private String v2 = "-234";
+	private String v3 = "-23.3";
+	private String v4 = "2344";
 
 	@Before
 	public void setup() {
@@ -26,11 +27,15 @@ public class ValidatorTest {
 	}
 
 	/**
-	 * Skjekker om input tar imot en Streng og spytter ut en Double
+	 * Skjekker om input tar imot negative, positive, med og uten komma tall
 	 */
 	@Test
 	public final void skjekkInputTempDouble() {
-		assertTrue(v.isValidTemperatur(t1));
+		assertTrue(v.isValidTemperatur(v0));
+		assertTrue(v.isValidTemperatur(v1));
+		assertTrue(v.isValidTemperatur(v2));
+		assertTrue(v.isValidTemperatur(v3));
+		assertFalse(v.isValidTemperatur(v4));
 	}
 
 	/**

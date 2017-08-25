@@ -18,7 +18,7 @@ public class Validator {
 	 * @return True, hvis strengen er korrekt, false ellers.
 	 */
 	public boolean isValidTemperatur(String s) {
-		return s != null && s.matches("^(|-)\\d{1,3}[.]\\d+$");
+		return s != null && s.matches("^(|-)\\d{1,3}(|[.]\\d+)$");
 	}
 
 	/**
