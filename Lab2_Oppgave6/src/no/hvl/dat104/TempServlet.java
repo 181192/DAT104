@@ -46,7 +46,7 @@ public class TempServlet extends HttpServlet {
 		if (validator.isValidTemperatur(temp) && validator.isValidTempUnit(enhet)) {
 			resultat = to.regnTemperatur(temp, enhet);
 			out.println("<h1>Temperaturomregning resultat</h1>");
-			out.println("<p>" + temp.toString() + " ºC = " + resultat + "  ºF</p>");
+			out.println("<p>" + temp.toString() + " &#8451; = " + resultat + "  &#8457;</p>");
 			out.println("<p><a href=\"/lab26\">En gang til</a></p>");
 		} else {
 			feilMelding();

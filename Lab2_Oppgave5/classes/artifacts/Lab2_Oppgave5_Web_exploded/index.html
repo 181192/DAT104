@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Valutaomformer</title>
+</head>
+<body>
+	<form action="result">
+		<fieldset>
+		<legend>Valutaomformer:</legend>
+			<p>
+				Beløp: 
+				<input 
+					type="number" 
+					name="belop"
+					min="0" 
+					placeholder="Beløp"
+					required
+					oninvalid="this.setCustomValidity('Vennligst oppgi ett beløp for å omregne.')" 
+					onchange="this.setCustomValidity('')" 
+				>
+				<select name="fra">
+					<option value="NOK">NOK</option>
+					<option value="USD">USD</option>
+					<option value="EUR">EUR</option>
+					<option value="GBP">GBP</option>
+				</select>
+			</p>
+			<p>
+				Skal veksle til: 
+				<select name="til">
+					<option value="NOK">NOK</option>
+					<option value="USD">USD</option>
+					<option value="EUR">EUR</option>
+					<option value="GBP">GBP</option>
+				</select> 
+			</p>
+			<p><input type="submit" value="Beregn"></p>
+		</fieldset>
+	</form>
+</body>
+</html>

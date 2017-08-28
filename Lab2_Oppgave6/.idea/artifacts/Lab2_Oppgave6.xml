@@ -10,6 +10,7 @@
           <element id="library" level="module" name="junit4" module-name="Lab2_Oppgave6" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="Lab2_Oppgave6/web/Web" />
     </root>
   </artifact>
 </component>
