@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IntelliJWebTest:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/IntelliJWebTest_war</output-path>
+    <root id="archive" name="IntelliJWebTest_war.war">
+      <element id="artifact" artifact-name="IntelliJWebTest:war exploded" />
+      <element id="file-copy" path="$PROJECT_DIR$/web/index.html" />
+    </root>
+  </artifact>
+</component>
