@@ -1,4 +1,4 @@
-/.metadata/
-/Servers/
-/RemoteSystemsTempFiles/
-/IntelliJWeb/
+.metadata/
+.idea/
+RemoteSystemsTempFiles/
+Servers/
