@@ -10,6 +10,12 @@ import java.io.IOException;
 @WebServlet("/error")
 public class ErrorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("error.jsp").forward(request, response);
+        response.setContentType("text/html; charset=ISO-8859-1");
+        try {
+            request.getRequestDispatcher("error.jsp").include(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        }
+
     }
 }
