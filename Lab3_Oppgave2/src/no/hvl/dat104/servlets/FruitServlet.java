@@ -1,4 +1,4 @@
-package no.hvl.dat104.no.hvl.dat104.servlets;
+package no.hvl.dat104.servlets;
 
 import no.hvl.dat104.Options;
 import no.hvl.dat104.Votes;
