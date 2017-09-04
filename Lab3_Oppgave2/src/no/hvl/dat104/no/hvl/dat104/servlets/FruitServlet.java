@@ -1,4 +1,7 @@
-package no.hvl.dat104;
+package no.hvl.dat104.no.hvl.dat104.servlets;
+
+import no.hvl.dat104.Options;
+import no.hvl.dat104.Votes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

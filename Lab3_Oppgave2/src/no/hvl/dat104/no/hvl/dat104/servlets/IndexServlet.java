@@ -1,4 +1,8 @@
-package no.hvl.dat104;
+package no.hvl.dat104.no.hvl.dat104.servlets;
+
+import no.hvl.dat104.Options;
+import no.hvl.dat104.Seed;
+import no.hvl.dat104.Votes;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,11 +21,6 @@ public class IndexServlet extends HttpServlet {
 
     private Votes v;
     private Options o;
-
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.sendRedirect("/");
-//    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

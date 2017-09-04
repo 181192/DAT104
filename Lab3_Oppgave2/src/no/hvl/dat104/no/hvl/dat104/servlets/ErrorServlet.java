@@ -1,4 +1,4 @@
-package no.hvl.dat104;
+package no.hvl.dat104.no.hvl.dat104.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
