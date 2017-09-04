@@ -19,7 +19,7 @@ public class HalloServlet extends HttpServlet {
         String navn = request.getParameter("navn");
 
         Validator v = new Validator();
-        navn = v.rensInputManuell(navn);
+        navn = v.escapeHtml(navn);
 
         response.setContentType("text/html; charset=ISO-8859-1");
         PrintWriter out = response.getWriter();

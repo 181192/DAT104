@@ -63,27 +63,27 @@ class ValidatorTest {
     }
 
     @Test
-    void rensInputManuellHTML() {
-        assertEquals(r1, v.rensInputManuell(in1));
+    void escapeHtmlHTML() {
+        assertEquals(r1, v.escapeHtml(in1));
     }
 
     @Test
-    void rensInputManuellNavn() {
-        assertEquals(in4, v.rensInputManuell(in4));
+    void escapeHtmlNavn() {
+        assertEquals(in4, v.escapeHtml(in4));
     }
 
     @Test
-    void rensInputManuellEmpty() {
-        assertEquals(in5, v.rensInputManuell(in5));
+    void escapeHtmlEmpty() {
+        assertEquals(in5, v.escapeHtml(in5));
     }
 
     @Test
-    void rensInputManuellNull() {
-        assertNull(v.rensInputManuell(in6));
+    void escapeHtmlNull() {
+        assertNull(v.escapeHtml(in6));
     }
 
     @Test
-    void rensInput() {
+    void escapeHtmlAPI() {
     }
 
 }

@@ -19,7 +19,7 @@ public class Validator {
      * @param s Strengen som skal renses
      * @return Renset streng eller null
      */
-    String rensInputManuell(String s) {
+    String escapeHtml(String s) {
         if (s != null) {
             return s
                     .replaceAll("&", "&amp;")
@@ -30,7 +30,7 @@ public class Validator {
         return null;
     }
 
-    public String rensInput(String s) {
+    public String escapeHtmlAPI(String s) {
         return null;
     }
 
