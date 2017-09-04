@@ -7,7 +7,7 @@ public class Options {
 
     private Map<Integer, String> alternatives;
 
-    Options() {
+    public Options() {
         this.alternatives = new HashMap<>();
     }
 

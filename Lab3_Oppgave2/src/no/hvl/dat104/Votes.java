@@ -7,11 +7,11 @@ public class Votes {
 
     private Map<Integer, Integer> votes;
 
-    Votes() {
+    public Votes() {
         this.votes = new HashMap<>();
     }
 
-    void addVote(int valg) {
+    public void addVote(int valg) {
         votes.put(valg, votes.get(valg) + 1);
         System.out.println(votes.get(valg));
     }

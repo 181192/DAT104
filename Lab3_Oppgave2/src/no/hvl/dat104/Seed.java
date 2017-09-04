@@ -7,7 +7,7 @@ import java.util.Map;
 public class Seed {
     private List<String> options;
 
-    Seed() {
+    public Seed() {
         options = new ArrayList<>();
     }
 
@@ -15,11 +15,11 @@ public class Seed {
         return (ArrayList<String>) this.options;
     }
 
-    void setOptions(List<String> options) {
+    public void setOptions(List<String> options) {
         this.options = options;
     }
 
-    void seedHashMaps(
+    public void seedHashMaps(
             Map<Integer, Integer> votes,
             Map<Integer, String> alternatives) {
 
