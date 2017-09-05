@@ -13,7 +13,6 @@ public class Votes {
 
     public void addVote(int valg) {
         votes.put(valg, votes.get(valg) + 1);
-        System.out.println(votes.get(valg));
     }
 
     public Map<Integer, Integer> getVotes() {
