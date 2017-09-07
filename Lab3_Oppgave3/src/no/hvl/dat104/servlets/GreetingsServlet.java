@@ -18,8 +18,7 @@ public class GreetingsServlet extends HttpServlet {
         name = request.getParameter("name");
 
         if (!Validator.validerNavn(name)) {
-//            response.sendRedirect("error");
-            response.sendError(500);
+            response.sendRedirect("error");
         } else {
             request.getSession().setAttribute("name", name);
             response.sendRedirect("greetings");
@@ -36,7 +35,7 @@ public class GreetingsServlet extends HttpServlet {
             request.getRequestDispatcher("greetings.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
-            response.sendError(500);
+            response.sendRedirect("error");
         }
     }
 }
