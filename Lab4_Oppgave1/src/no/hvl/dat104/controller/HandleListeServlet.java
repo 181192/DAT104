@@ -30,7 +30,7 @@ public class HandleListeServlet extends javax.servlet.http.HttpServlet {
             }
             response.sendRedirect("handleliste");
         } else {
-            response.sendError(500);
+            response.sendError(500, "Validering av input feilet");
         }
     }
 

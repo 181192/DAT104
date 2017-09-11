@@ -1,5 +1,6 @@
 package no.hvl.dat104.dataaccess;
 
+
 import no.hvl.dat104.model.Vare;
 
 import javax.ejb.Stateless;
