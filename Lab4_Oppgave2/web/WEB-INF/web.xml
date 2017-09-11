@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>LoggInnServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.LoggInnServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HemmeligServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.HemmeligServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoggUtServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.LoggUtServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoggInnServlet</servlet-name>
+        <url-pattern>/logginn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoggUtServlet</servlet-name>
+        <url-pattern>/loggut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HemmeligServlet</servlet-name>
+        <url-pattern>/hemmelig</url-pattern>
+    </servlet-mapping>
+</web-app>
