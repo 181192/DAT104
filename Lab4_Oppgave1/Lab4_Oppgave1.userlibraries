@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Java EE 6-Java EE 6">
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.servlet.jsp.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.annotation.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.persistence.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.ejb.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.servlet.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.transaction.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.jms.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.resource.jar" />
+    <archive path="D:/Utvikling/Skole/DAT104/Lab4_Oppgave1/lib/javax.servlet.jsp.jstl.jar" />
+  </library>
+  <library name="jstl">
+    <archive path="D:/Utvikling/Ressurser/Java/jstl/javax.servlet.jsp.jstl-1.2.1.jar" />
+    <archive path="D:/Utvikling/Ressurser/Java/jstl/javax.servlet.jsp.jstl-api-1.2.1.jar" />
+  </library>
+</eclipse-userlibraries>
+
