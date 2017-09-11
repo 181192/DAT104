@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This is a tomee.xml embed in the application (META-INF or WEB-INF) -->
+<!-- See https://tomee.apache.org/refcard/refcard.html for more tricks -->
+<resources>
+    <Resource id="myDataSource" type="javax.sql.DataSource">
+        jdbcDriver = org.postgresql.Driver
+        jdbcUrl = jdbc:postgresql://localhost:5432/DAT104
+        userName = postgres
+        password = postgres
+    </Resource>
+</resources>
