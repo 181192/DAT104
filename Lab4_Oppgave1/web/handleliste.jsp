@@ -20,12 +20,10 @@
         <input type="submit" name="submit" value="Submit">
     </form>
     <c:forEach var="vare" items="${handleliste}">
-        <p>
         <form action="handleliste" method="post">
                 <input type="hidden" name="vare" value="${vare.item}">
                 <input type="submit" name="submit" value="Slett">: ${vare.item}
         </form>
-        </p>
     </c:forEach>
 </fieldset>
 </body>
