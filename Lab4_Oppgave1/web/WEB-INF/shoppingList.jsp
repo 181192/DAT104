@@ -1,4 +1,4 @@
-<%--
+<%@ page import="static no.hvl.dat104.controller.UrlMappings.SHOPPING_LIST_URL" %><%--
   Created by IntelliJ IDEA.
   User: krist
   Date: 11.09.2017
@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=ISO-8859-1" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<jsp:useBean id="handleliste" scope="request" type="java.util.List"/>
+<jsp:useBean id="shoppingList" scope="request" type="java.util.List"/>
 <html>
 <head>
     <title>Min Handleliste</title>
@@ -15,14 +15,14 @@
 <body>
 <fieldset>
     <legend>Min Handleliste</legend>
-    <form action="handleliste" method="post">
+    <form action="<%= SHOPPING_LIST_URL %>" method="post">
         Legg Til: <input name="vare" placeholder="Vare" autofocus>
         <input type="submit" name="submit" value="Submit">
     </form>
-    <c:forEach var="vare" items="${handleliste}">
-        <form action="handleliste" method="post">
-                <input type="hidden" name="vare" value="${vare.item}">
-                <input type="submit" name="submit" value="Slett">: ${vare.item}
+    <c:forEach var="item" items="${shoppingList}">
+        <form action="<%= SHOPPING_LIST_URL %>" method="post">
+            <input type="hidden" name="vare" value="${item.item}">
+            <input type="submit" name="submit" value="Slett">: ${item.item}
         </form>
     </c:forEach>
 </fieldset>
