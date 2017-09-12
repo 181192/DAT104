@@ -3,7 +3,7 @@ package no.hvl.dat104.dataaccess;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class VareDAOTest {
+class ItemEAOTest {
     @BeforeEach
     void setUp() {
     }

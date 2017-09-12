@@ -6,14 +6,14 @@ public class Validator {
      * Validerer strengen om det er riktig, tillatter alle
      * unicode bokstaver fra alle språk samt -, ' og whitespaces
      *
-     * @param streng Strengen som skal valideres
+     * @param s Strengen som skal valideres
      * @return True eller false
      */
-    public static boolean validerStreng(String streng) {
-        return streng != null && streng.matches("^[\\p{L}\\-\'\\s]+$");
+    public static boolean isValidString(String s) {
+        return s != null && s.matches("^[\\p{L}\\-\'\\s]+$");
     }
 
-    public static boolean validerSubmit(String submit) {
+    public static boolean isValidSubmitType(String submit) {
         return submit != null && (submit.equals("Slett") || submit.equals("Submit"));
     }
 
