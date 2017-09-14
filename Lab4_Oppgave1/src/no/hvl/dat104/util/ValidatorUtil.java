@@ -1,6 +1,6 @@
-package no.hvl.dat104;
+package no.hvl.dat104.util;
 
-public class Validator {
+public class ValidatorUtil {
 
     /**
      * Validerer strengen om det er riktig, tillatter alle
@@ -11,6 +11,10 @@ public class Validator {
      */
     public static boolean isValidString(String s) {
         return s != null && s.matches("^[\\p{L}\\-\'\\s]+$");
+    }
+
+    public static boolean isValidNumber(String n) {
+        return n != null && n.matches("^[\\d]+$");
     }
 
     public static boolean isValidSubmitType(String submit) {
@@ -32,6 +36,14 @@ public class Validator {
                     .replaceAll("\"", "&quot;");
         }
         return null;
+    }
+
+    public static boolean isValidUsername(String username) {
+        return username != null && !username.equals("");
+    }
+
+    public static boolean isValidPassword(String password) {
+        return password != null && !password.equals("");
     }
 
     public String escapeHtmlAPI(String s) {

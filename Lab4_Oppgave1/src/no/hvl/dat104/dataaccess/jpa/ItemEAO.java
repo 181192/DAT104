@@ -15,22 +15,27 @@ public class ItemEAO implements IItemEAO {
     @PersistenceContext(name = "itemPersistenceUnit")
     private EntityManager em;
 
-    public void addItem(ItemEntity v) {
-        em.persist(v);
+    @Override
+    public void addItem(ItemEntity i) {
+        em.persist(i);
     }
 
-    public ItemEntity findItem(String id) {
+    @Override
+    public ItemEntity findItem(Integer id) {
         return em.find(ItemEntity.class, id);
     }
 
-    public void updateItem(ItemEntity v) {
-        em.merge(v);
+    @Override
+    public void updateItem(ItemEntity i) {
+        em.merge(i);
     }
 
+    @Override
     public void removeItem(ItemEntity id) {
-        em.remove(em.find(ItemEntity.class, id.getItem()));
+        em.remove(em.find(ItemEntity.class, id.getItemId()));
     }
 
+    @Override
     public List<ItemEntity> allItems() {
         TypedQuery<ItemEntity> query = em.createQuery("SELECT i FROM ItemEntity i", ItemEntity.class);
         return query.getResultList();
