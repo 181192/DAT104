@@ -7,7 +7,7 @@ import java.util.List;
 public interface IItemEAO {
     void addItem(ItemEntity v);
 
-    ItemEntity findItem(String id);
+    ItemEntity findItem(Integer id);
 
     void updateItem(ItemEntity v);
 
