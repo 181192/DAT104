@@ -7,24 +7,31 @@
 --%>
 <%@ page contentType="text/html;charset=ISO-8859-1" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="./partials/header.jsp"/>
 <jsp:useBean id="shoppingList" scope="request" type="java.util.List"/>
-<html>
-<head>
-    <title>Min Handleliste</title>
-</head>
-<body>
+<jsp:useBean id="message" scope="request" type="java.lang.String"/>
+<jsp:useBean id="flash" scope="request" type="java.lang.String"/>
+<div>
+    <c:if test="${flash == 'Error'}">
+        <p style="color:red;"> ${message}</p>
+        <c:remove var="flash" scope="session"/>
+    </c:if>
+    <c:if test="${flash == 'Success'}">
+        <p style="color:green;"> ${message}</p>
+        <c:remove var="flash" scope="session"/>
+    </c:if>
+</div>
 <fieldset>
     <legend>Min Handleliste</legend>
     <form action="<%= SHOPPING_LIST_URL %>" method="post">
-        Legg Til: <input name="vare" placeholder="Vare" autofocus>
+        Legg Til: <input name="newItem" placeholder="Vare" autofocus>
         <input type="submit" name="submit" value="Submit">
     </form>
     <c:forEach var="item" items="${shoppingList}">
         <form action="<%= SHOPPING_LIST_URL %>" method="post">
-            <input type="hidden" name="vare" value="${item.item}">
-            <input type="submit" name="submit" value="Slett">: ${item.item}
+            <input type="hidden" name="delItem" value="<c:out value="${item.itemId}"/>">
+            <input type="submit" name="submit" value="Slett"> <c:out value="${item.item}"/>
         </form>
     </c:forEach>
 </fieldset>
-</body>
-</html>
+<jsp:include page="./partials/footer.jsp"/>
