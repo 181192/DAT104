@@ -1,9 +1,6 @@
 package no.hvl.dat104.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user", schema = "shopping_list", catalog = "DAT104")
@@ -13,13 +10,18 @@ public class UserEntity {
     private String userId;
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sh_id", referencedColumnName = "shopping_list_id")
+    private ShoppingListEntity shoppingList;
+
     public UserEntity() {
-        this("", "");
+        this("", "", null);
     }
 
-    public UserEntity(String userId, String password) {
+    public UserEntity(String userId, String password, ShoppingListEntity s) {
         this.userId = userId;
         this.password = password;
+        this.shoppingList = s;
     }
 
     public String getUserId() {
@@ -36,5 +38,13 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public ShoppingListEntity getShoppingList() {
+        return shoppingList;
+    }
+
+    public void setShoppingList(ShoppingListEntity shoppingList) {
+        this.shoppingList = shoppingList;
     }
 }

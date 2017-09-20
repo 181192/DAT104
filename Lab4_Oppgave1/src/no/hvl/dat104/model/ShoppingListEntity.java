@@ -1,6 +1,8 @@
 package no.hvl.dat104.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "shopping_list", schema = "shopping_list", catalog = "DAT104")
@@ -11,12 +13,17 @@ public class ShoppingListEntity {
     private Integer shoppingListId;
     private String description;
 
+    @Transient
+    private List<ItemEntity> items;
+
     public ShoppingListEntity() {
         this("");
+        items = new ArrayList<>();
     }
 
     public ShoppingListEntity(String description) {
         this.description = description;
+        items = new ArrayList<>();
     }
 
     public Integer getShoppingListId() {
@@ -33,5 +40,21 @@ public class ShoppingListEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<ItemEntity> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemEntity> items) {
+        this.items = items;
+    }
+
+    public void addItemToShoppingList(ItemEntity i) {
+        items.add(i);
+    }
+
+    public void removeItemFromShoppingList(ItemEntity i) {
+        items.remove(i);
     }
 }

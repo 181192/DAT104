@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
-import static no.hvl.dat104.controller.UrlMappings.LOGOUT_URL;
 
-@WebServlet(name = "LogoutServlet", urlPatterns = "/" + LOGOUT_URL)
+@WebServlet
 public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
