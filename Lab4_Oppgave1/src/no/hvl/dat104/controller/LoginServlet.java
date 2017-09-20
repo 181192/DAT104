@@ -17,7 +17,7 @@ import java.io.IOException;
 import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
 import static no.hvl.dat104.controller.UrlMappings.SHOPPING_LIST_URL;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/" + LOGIN_URL)
+@WebServlet
 public class LoginServlet extends HttpServlet {
 
     @EJB

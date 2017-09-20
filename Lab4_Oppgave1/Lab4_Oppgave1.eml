@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/Lab4_Oppgave1"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/test"/>
+	</contentEntry>
+	<lib name="JUnit5" scope="TEST">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/junit-jupiter-api-5.0.0-RC2.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/opentest4j-1.0.0-RC1.jar!/"/>
+	</lib>
+	<lib name="jstl" scope="PROVIDED"/>
+	<levels>
+		<level name="Java EE 6-Java EE 6" value="project"/>
+		<level name="jstl" value="project"/>
+	</levels>
+</component>
