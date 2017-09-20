@@ -9,8 +9,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <jsp:include page="./partials/header.jsp"/>
 <jsp:useBean id="shoppingList" scope="request" type="java.util.List"/>
-<jsp:useBean id="message" scope="request" type="java.lang.String"/>
-<jsp:useBean id="flash" scope="request" type="java.lang.String"/>
 <div>
     <c:if test="${flash == 'Error'}">
         <p style="color:red;"> ${message}</p>

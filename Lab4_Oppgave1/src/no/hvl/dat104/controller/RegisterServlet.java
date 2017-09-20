@@ -1,6 +1,7 @@
 package no.hvl.dat104.controller;
 
 import no.hvl.dat104.dataaccess.IUserEAO;
+import no.hvl.dat104.model.ShoppingListEntity;
 import no.hvl.dat104.model.UserEntity;
 import no.hvl.dat104.util.FlashUtil;
 import no.hvl.dat104.util.InnloggingUtil;
@@ -14,10 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static no.hvl.dat104.controller.UrlMappings.REGISTER_URL;
+import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
 import static no.hvl.dat104.controller.UrlMappings.SHOPPING_LIST_URL;
 
-@WebServlet(name = "RegisterServlet", urlPatterns = "/" + REGISTER_URL)
+@WebServlet
 public class RegisterServlet extends HttpServlet {
 
     @EJB
@@ -28,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
             String username = ValidatorUtil.escapeHtml(request.getParameter("username"));
             String password = ValidatorUtil.escapeHtml(request.getParameter("password"));
             if (ValidatorUtil.isValidUsername(username) && ValidatorUtil.isValidPassword(password)) {
-                UserEntity u = new UserEntity(username, password);
+                UserEntity u = new UserEntity(username, password, new ShoppingListEntity());
                 userEAO.addUser(u);
                 FlashUtil.registerUser(request);
             } else {
@@ -37,6 +38,7 @@ public class RegisterServlet extends HttpServlet {
         } else {
             response.sendRedirect(SHOPPING_LIST_URL);
         }
+        response.sendRedirect(LOGIN_URL);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

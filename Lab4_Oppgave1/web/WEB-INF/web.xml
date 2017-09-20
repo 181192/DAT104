@@ -3,4 +3,49 @@
          xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <servlet>
+        <servlet-name>LandingServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.LandingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShoppingListServlet</servlet-name>
+        <servlet-class>no.hvl.dat104.controller.ShoppingListServlet</servlet-class>
+        <init-param>
+            <param-name>timeout</param-name>
+            <param-value>60</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LandingServlet</servlet-name>
+        <url-pattern>/landing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/logginn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/loggut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShoppingListServlet</servlet-name>
+        <url-pattern>/handleliste</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -12,12 +12,17 @@ public class ItemEntity {
 
     private String item;
 
+    @ManyToOne
+    @JoinColumn(name = "sl_id")
+    private ShoppingListEntity shoppingList;
+
     public ItemEntity() {
-        this("");
+        this("", null);
     }
 
-    public ItemEntity(String item) {
+    public ItemEntity(String item, ShoppingListEntity shoppingList) {
         this.item = item;
+        this.shoppingList = shoppingList;
     }
 
     public Integer getItemId() {
@@ -34,5 +39,13 @@ public class ItemEntity {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public ShoppingListEntity getShoppingList() {
+        return shoppingList;
+    }
+
+    public void setShoppingList(ShoppingListEntity shoppingList) {
+        this.shoppingList = shoppingList;
     }
 }

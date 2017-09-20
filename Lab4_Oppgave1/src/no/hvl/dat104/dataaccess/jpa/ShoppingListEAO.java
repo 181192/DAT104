@@ -42,7 +42,7 @@ public class ShoppingListEAO implements IShoppingListEAO {
     }
 
     @Override
-    public List<ItemEntity> allItemsInShoppingList(String sl_id) {
-        return null;
+    public List allItemsInShoppingList(ShoppingListEntity sl_id) {
+        return em.createQuery("SELECT i FROM ItemEntity i WHERE i.shoppingList = :sl_id").setParameter("sl_id", sl_id).getResultList();
     }
 }

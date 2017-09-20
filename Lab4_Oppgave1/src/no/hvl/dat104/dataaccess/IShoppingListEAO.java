@@ -1,6 +1,5 @@
 package no.hvl.dat104.dataaccess;
 
-import no.hvl.dat104.model.ItemEntity;
 import no.hvl.dat104.model.ShoppingListEntity;
 
 import java.util.List;
@@ -17,5 +16,5 @@ public interface IShoppingListEAO {
 
     List<ShoppingListEntity> allShoppingListEntity();
 
-    List<ItemEntity> allItemsInShoppingList(String sl_id);
+    List allItemsInShoppingList(ShoppingListEntity sl_id);
 }
