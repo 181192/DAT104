@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ItemEntityEAOTest {
     private IItemEAO itemEAO;
-    private ItemEntity item = new ItemEntity("Melk");
+    private ItemEntity item = new ItemEntity("Melk", null);
     private EntityManagerFactory emf;
     private EntityManager em;
 

@@ -8,8 +8,6 @@
 --%>
 <%@ page contentType="text/html;charset=ISO-8859-1" %>
 <jsp:include page="./partials/header.jsp"/>
-<jsp:useBean id="message" scope="request" type="java.lang.String"/>
-<jsp:useBean id="flash" scope="request" type="java.lang.String"/>
 <div>
     <c:if test="${flash == 'Error'}">
         <p style="color:red;"> ${message}</p>

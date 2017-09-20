@@ -37,5 +37,4 @@ public class InnloggingUtil {
             session.invalidate();
         }
     }
-
 }

@@ -10,7 +10,7 @@ public class FlashUtil {
 
     public static void loggedInn(HttpServletRequest request, String username) {
         String flash = "Success";
-        String message = "Velkommen: " + username;
+        String message = "Velkommen tilbake " + username;
         request.getSession().setAttribute("message", message);
         request.getSession().setAttribute("flash", flash);
     }
