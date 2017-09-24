@@ -8,7 +8,6 @@ import no.hvl.dat104.util.ValidatorUtil;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +16,6 @@ import java.io.IOException;
 import static no.hvl.dat104.controller.UrlMappings.LOGIN_URL;
 import static no.hvl.dat104.controller.UrlMappings.SHOPPING_LIST_URL;
 
-@WebServlet
 public class LoginServlet extends HttpServlet {
 
     @EJB
