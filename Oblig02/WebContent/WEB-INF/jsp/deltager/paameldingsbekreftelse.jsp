@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page
+	import="static no.hvl.dat104.controller.UrlMappings.DELTAGERLISTE_URL"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +18,6 @@
 	<p>
 		<b>NB! Husk å betale til kassereren før festen!</b>
 	</p>
-	<a href="deltagerliste.html">Gå til deltagerlisten</a>
+	<a href="<%= DELTAGERLISTE_URL %>">Gå til deltagerlisten</a>
 </body>
 </html>

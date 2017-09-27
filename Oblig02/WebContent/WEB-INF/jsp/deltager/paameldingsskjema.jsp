@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page
+	import="static no.hvl.dat104.controller.UrlMappings.PAAMELDINGSBEKREFTELSE_URL"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 </head>
 <body>
 	<h2>Påmelding</h2>
-	<form action="paameldingsbekreftelse.html">
+	<form action="<%= PAAMELDINGSBEKREFTELSE_URL %>" method="post">
 		<fieldset>
 			<legend>Personlige data</legend>
 			<p>

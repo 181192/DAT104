@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="static no.hvl.dat104.controller.UrlMappings.KASSERERLOGIN_URL" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +36,7 @@
 		</table>
 	</form>
 	<p>
-		<a href="kassererlogin.html">Ferdig</a>
+		<a href="<%= KASSERERLOGIN_URL %>">Ferdig</a>
 	</p>
 </body>
 </html>

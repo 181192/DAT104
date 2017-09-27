@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page
+	import="static no.hvl.dat104.controller.UrlMappings.DELTAGERLISTE_URL"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
 	<h2>Logg inn</h2>
 	<p>Det er kun registrerte deltagere som får se deltagerlisten. Logg
 		inn ved å gi mobil-nummeret ditt.</p>
-	<form action="deltagerliste.html">
+	<form action="<%=DELTAGERLISTE_URL%>" method="post">
 		<fieldset>
 			<legend>Logg inn</legend>
 			<p>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="static no.hvl.dat104.controller.UrlMappings.FERDIG_URL"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,14 +22,13 @@
 			<td align="center">&#9794;</td>
 			<td>Arne Arnesen</td>
 		</tr>
-		<!-- <tr bgcolor="#aaffaa"><td align="center">&#9794;</td><td>Arne Arnesen</td></tr> -->
 		<tr>
 			<td align="center">&#9792;</td>
 			<td>Berit Beritsen</td>
 		</tr>
 	</table>
 	<p>
-		<a href="ferdig.html">Ferdig</a>
+		<a href="<%=FERDIG_URL%>">Ferdig</a>
 	</p>
 </body>
 </html>
