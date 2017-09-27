@@ -3,6 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
+
 	<display-name>Oblig02</display-name>
 	<servlet>
 		<servlet-name>MobilLoginServlet</servlet-name>
@@ -13,8 +14,8 @@
 		<servlet-class>no.hvl.dat104.controller.deltager.PaameldingBekreftelseServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>PaaMeldingSerlvet</servlet-name>
-		<servlet-class>no.hvl.dat104.controller.deltager.PaameldingSerlvet</servlet-class>
+		<servlet-name>PaameldingServlet</servlet-name>
+		<servlet-class>no.hvl.dat104.controller.deltager.PaameldingServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>DeltagerListeServlet</servlet-name>
@@ -41,7 +42,7 @@
 		<url-pattern>/paameldingbekreftelse</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>PaameldingSerlvet</servlet-name>
+		<servlet-name>PaameldingServlet</servlet-name>
 		<url-pattern>/paamelding</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
