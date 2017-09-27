@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class InnlogginUtil {
-	
+		
 	public static boolean erInnlogget(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
 		return (session != null) && (session.getAttribute("innloggetDeltager") != null);
@@ -15,10 +15,11 @@ public class InnlogginUtil {
 		return erInnlogget(request) ? (String) session.getAttribute("innloggetDeltager") : null;
 	}
 	
-	public static void loggInnSom(HttpServletRequest request, Integer nummer) {
+	public static void loggInnSom(HttpServletRequest request, String nummer, String timeout) {
 		loggUt(request);
 		HttpSession session = request.getSession(true);
 		session.setAttribute("innloggetDeltager", nummer);
+		session.setMaxInactiveInterval(Integer.parseInt(timeout));
 	}
 	
 	public static void loggUt(HttpServletRequest request) {

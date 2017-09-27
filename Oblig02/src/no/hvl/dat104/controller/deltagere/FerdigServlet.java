@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import no.hvl.dat104.util.InnlogginUtil;
+
 /**
  * Servlet implementation class FerdigServlet
  */
@@ -15,13 +17,9 @@ public class FerdigServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/deltagere/ferdig.jsp").forward(request, response);;
+		if (InnlogginUtil.erInnlogget(request)) {
+			InnlogginUtil.loggUt(request);
+		}
+		request.getRequestDispatcher("WEB-INF/jsp/deltagere/ferdig.jsp").forward(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }
