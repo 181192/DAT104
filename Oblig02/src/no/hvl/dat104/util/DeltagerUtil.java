@@ -23,11 +23,25 @@ public class DeltagerUtil {
 	 * @return Null eller en deltager
 	 */
 	public static DeltagerEntity hentDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
-		String nummer = ValideringUtil.escapeHTML(request.getParameter("password"));
+		String nummer = ValideringUtil.escapeHTML((String) request.getParameter("password"));
 		if (!ValideringUtil.validerNummer(nummer)) {
 			return null;
 		}
 		return deltagerEAO.finnDeltager(Integer.parseInt(nummer));
+	}
+
+	public static void leggTilDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
+		String fornavn = ValideringUtil.escapeHTML(request.getParameter("fornavn"));
+		String etternavn = ValideringUtil.escapeHTML(request.getParameter("etternavn"));
+		String mobil = ValideringUtil.escapeHTML(request.getParameter("mobil"));
+		String kjoenn = ValideringUtil.escapeHTML(request.getParameter("kjoenn"));
+		boolean erMann = kjoenn.equals("mann") ? true : false;
+
+		if (ValideringUtil.validerFornavn(fornavn) && ValideringUtil.validerEtternavn(etternavn)
+				&& ValideringUtil.validerNummer(mobil)) {
+			DeltagerEntity d = new DeltagerEntity(Integer.parseInt(mobil), fornavn, etternavn, erMann, false, false);
+			deltagerEAO.leggTilDeltager(d);
+		}
 	}
 
 }
