@@ -28,6 +28,7 @@ public class BetalingsOversiktServlet extends HttpServlet {
 			throws ServletException, IOException {
 		if (InnlogginUtil.erInnlogget(request)) {
 			DeltagerEntity d = DeltagerUtil.hentDeltager(request, deltagerEAO);
+			System.out.println(d.getFornavn() + " " + d.getEtternavn());
 			if (d != null && d.getErKasserer()) {
 				request.getRequestDispatcher("WEB-INF/jsp/kasserer/betalingsoversikt.jsp").forward(request, response);
 			} else {

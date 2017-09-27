@@ -19,7 +19,9 @@ public class DeltagerUtil {
 	 * finnes i databasen
 	 * 
 	 * @param request
+	 *            Request
 	 * @param deltagerEAO
+	 *            DeltagerEAO
 	 * @return Null eller en deltager
 	 */
 	public static DeltagerEntity hentDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
@@ -30,6 +32,14 @@ public class DeltagerUtil {
 		return deltagerEAO.finnDeltager(Integer.parseInt(nummer));
 	}
 
+	/**
+	 * Escape html på input, validerer input og legger til ny deltaker
+	 * 
+	 * @param request
+	 *            Request
+	 * @param deltagerEAO
+	 *            DeltagerEAO
+	 */
 	public static void leggTilDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
 		String fornavn = ValideringUtil.escapeHTML(request.getParameter("fornavn"));
 		String etternavn = ValideringUtil.escapeHTML(request.getParameter("etternavn"));

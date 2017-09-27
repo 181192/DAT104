@@ -47,6 +47,13 @@ public class ValideringUtil {
 		return (s != null) && s.matches(regex);
 	}
 
+	/**
+	 * Escaper all html kode
+	 * 
+	 * @param s
+	 *            String som skal valideres
+	 * @return String uten html kode
+	 */
 	public static String escapeHTML(String s) {
 		return StringEscapeUtils.escapeHtml(s);
 	}
