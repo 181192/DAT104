@@ -4,9 +4,7 @@
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
     <persistence-unit name="festPersistenceUnit" transaction-type="JTA">
         <jta-data-source>myDataSource</jta-data-source>
-        <!-- <class>no.hvl.dat104.model.ItemEntity</class>
-        <class>no.hvl.dat104.model.ShoppingListEntity</class>
-        <class>no.hvl.dat104.model.UserEntity</class> -->
+        <class>no.hvl.dat104.model.DeltagerEntity</class>
         <properties>
 			<property name="tomee.jpa.cdi" value="false" />
 		</properties>
