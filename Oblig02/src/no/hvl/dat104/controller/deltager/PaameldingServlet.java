@@ -1,7 +1,6 @@
 package no.hvl.dat104.controller.deltager;
 
 import static no.hvl.dat104.controller.UrlMappings.DELTAGERLISTE_URL;
-import static no.hvl.dat104.controller.UrlMappings.MOBILLOGIN_URL;
 import static no.hvl.dat104.controller.UrlMappings.PAAMELDINGSBEKREFTELSE_URL;
 
 import java.io.IOException;
