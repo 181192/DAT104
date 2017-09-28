@@ -46,8 +46,9 @@ public class KassererLoginServlet extends HttpServlet {
 		if (d != null) {
 			// TODO fikse bug med at getInitParameter returnerer null
 			// String timeout = getServletContext().getInitParameter("timeout");
-			String timeout = "10";
-			InnlogginUtil.loggInnSom(request, d.getMobil().toString(), timeout);
+			String timeout = "30";
+			System.out.println("Logginnsom " + d.getMobil().toString());
+			InnlogginUtil.loggInnSom(request, d, timeout);
 			response.sendRedirect(BETALINGSOVERSIKT_URL);
 		} else {
 			response.sendRedirect(KASSERERLOGIN_URL);

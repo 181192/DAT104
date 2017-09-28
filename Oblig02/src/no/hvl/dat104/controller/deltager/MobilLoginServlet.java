@@ -41,7 +41,7 @@ public class MobilLoginServlet extends HttpServlet {
 			// TODO fikse bug med at getInitParameter returnerer null
 			// String timeout = getServletContext().getInitParameter("timeout");
 			String timeout = "10";
-			InnlogginUtil.loggInnSom(request, d.getMobil().toString(), timeout);
+			InnlogginUtil.loggInnSom(request, d, timeout);
 			response.sendRedirect(DELTAGERLISTE_URL);
 		} else {
 			response.sendRedirect(PAAMELDING_URL);

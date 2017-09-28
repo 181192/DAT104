@@ -3,6 +3,8 @@ package no.hvl.dat104.util;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import no.hvl.dat104.model.DeltagerEntity;
+
 public class InnlogginUtil {
 
 	/**
@@ -26,9 +28,9 @@ public class InnlogginUtil {
 	 *            Deltagerens nummer
 	 * @return Innlogget deltager
 	 */
-	public static String erInnloggetSom(HttpServletRequest request, Integer nummer) {
+	public static DeltagerEntity erInnloggetSom(HttpServletRequest request) {
 		HttpSession session = request.getSession(false);
-		return erInnlogget(request) ? (String) session.getAttribute("innloggetDeltager") : null;
+		return erInnlogget(request) ? (DeltagerEntity) session.getAttribute("innloggetDeltager") : null;
 	}
 
 	/**
@@ -41,10 +43,10 @@ public class InnlogginUtil {
 	 * @param timeout
 	 *            Timeout på innlogging
 	 */
-	public static void loggInnSom(HttpServletRequest request, String nummer, String timeout) {
+	public static void loggInnSom(HttpServletRequest request, DeltagerEntity deltager, String timeout) {
 		loggUt(request);
 		HttpSession session = request.getSession(true);
-		session.setAttribute("innloggetDeltager", nummer);
+		session.setAttribute("innloggetDeltager", deltager);
 		session.setMaxInactiveInterval(Integer.parseInt(timeout));
 	}
 
