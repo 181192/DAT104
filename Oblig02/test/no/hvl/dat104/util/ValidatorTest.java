@@ -37,6 +37,8 @@ public class ValidatorTest {
 	private String n2 = "9a8a6a4a";
 	private String n3 = "123456781";
 
+	// TODO Lage en metode for hver test...
+	
 	@Test
 	public void testFornavn() {
 		assertFalse(ValideringUtil.validerFornavn(f0));
