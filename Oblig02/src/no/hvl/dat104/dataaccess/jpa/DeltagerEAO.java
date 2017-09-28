@@ -8,6 +8,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import no.hvl.dat104.dataaccess.IDeltagerEAO;
 import no.hvl.dat104.model.DeltagerEntity;
@@ -43,11 +44,11 @@ public class DeltagerEAO implements IDeltagerEAO {
 		em.remove(em.find(DeltagerEntity.class, d.getMobil()));
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<DeltagerEntity> alleDeltagere() {
-		@SuppressWarnings("unchecked")
-		List<DeltagerEntity> createQuery = (List<DeltagerEntity>) em.createQuery("SELECT d FROM DeltagerEntity d");
-		return createQuery;
+		Query deltagere = em.createQuery("SELECT d FROM DeltagerEntity d");
+		return (List<DeltagerEntity>) deltagere.getResultList();
 	}
 
 }

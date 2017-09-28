@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="static no.hvl.dat104.controller.UrlMappings.FERDIG_URL"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,18 +15,12 @@
 			<th>Kjønn</th>
 			<th align="left">Navn</th>
 		</tr>
-		<tr>
-			<td align="center">&#9794;</td>
-			<td>Arne And</td>
-		</tr>
-		<tr bgcolor="#ffaaaa">
-			<td align="center">&#9794;</td>
-			<td>Arne Arnesen</td>
-		</tr>
-		<tr>
-			<td align="center">&#9792;</td>
-			<td>Berit Beritsen</td>
-		</tr>
+		<c:forEach var="d" items="${deltagere}">
+			<tr>
+				<td align="center">${d.erMann ? '&#9794;' : '&#9792;'}</td>
+				<td bgcolor="${innloggetDeltager.mobil eq d.mobil ? (innloggetDeltager.harBetalt ? '#aaffaa' : '#ffaaaa') : ''}"><c:out value="${d.fornavn} ${d.etternavn}" /></td>
+			</tr>
+		</c:forEach>
 	</table>
 	<p>
 		<a href="<%=FERDIG_URL%>">Ferdig</a>
