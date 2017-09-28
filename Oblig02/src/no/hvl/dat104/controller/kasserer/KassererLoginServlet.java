@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import no.hvl.dat104.dataaccess.IDeltagerEAO;
 import no.hvl.dat104.model.DeltagerEntity;
 import no.hvl.dat104.util.DeltagerUtil;
+import no.hvl.dat104.util.FlashUtil;
 import no.hvl.dat104.util.InnlogginUtil;
 
 /**
@@ -28,10 +29,12 @@ public class KassererLoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (InnlogginUtil.erInnlogget(request)) {
-			DeltagerEntity d = DeltagerUtil.hentDeltager(request, deltagerEAO);
+			DeltagerEntity d = InnlogginUtil.erInnloggetSom(request);
 			if (d != null && d.getErKasserer()) {
+				FlashUtil.flash(request, "success", "Velkommen " + d.getFornavn() + " " + d.getEtternavn());
 				response.sendRedirect(BETALINGSOVERSIKT_URL);
 			} else {
+				FlashUtil.flash(request, "auth", "Beklager, ingen tilgang!");
 				response.sendRedirect(MOBILLOGIN_URL);
 			}
 		} else {
@@ -51,6 +54,7 @@ public class KassererLoginServlet extends HttpServlet {
 			InnlogginUtil.loggInnSom(request, d, timeout);
 			response.sendRedirect(BETALINGSOVERSIKT_URL);
 		} else {
+			FlashUtil.flash(request, "error", "Feil passord");
 			response.sendRedirect(KASSERERLOGIN_URL);
 		}
 	}

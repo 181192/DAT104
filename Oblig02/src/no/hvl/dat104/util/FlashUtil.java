@@ -35,7 +35,7 @@ public class FlashUtil {
 	 * @return true / false
 	 */
 	private static boolean validateFlashType(String f) {
-		String regex = "^(success|error)$";
+		String regex = "^(success|error|auth)$";
 		return (f != null) && f.matches(regex);
 	}
 

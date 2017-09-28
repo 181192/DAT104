@@ -4,6 +4,7 @@ import static no.hvl.dat104.controller.UrlMappings.KASSERERLOGIN_URL;
 import static no.hvl.dat104.controller.UrlMappings.MOBILLOGIN_URL;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -28,8 +29,9 @@ public class BetalingsOversiktServlet extends HttpServlet {
 			throws ServletException, IOException {
 		if (InnlogginUtil.erInnlogget(request)) {
 			DeltagerEntity d = DeltagerUtil.hentDeltager(request, deltagerEAO);
-			System.out.println(d.getFornavn() + " " + d.getEtternavn());
 			if (d != null && d.getErKasserer()) {
+				List<DeltagerEntity> deltagere = deltagerEAO.alleDeltagere();
+				request.setAttribute("deltagere", deltagere);
 				request.getRequestDispatcher("WEB-INF/jsp/kasserer/betalingsoversikt.jsp").forward(request, response);
 			} else {
 				response.sendRedirect(MOBILLOGIN_URL);
@@ -42,8 +44,7 @@ public class BetalingsOversiktServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

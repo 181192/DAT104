@@ -16,9 +16,9 @@
 			<th align="left">Navn</th>
 		</tr>
 		<c:forEach var="d" items="${deltagere}">
-			<tr>
+			<tr bgcolor="${innloggetDeltager.mobil eq d.mobil ? (innloggetDeltager.harBetalt ? '#aaffaa' : '#ffaaaa') : ''}">
 				<td align="center">${d.erMann ? '&#9794;' : '&#9792;'}</td>
-				<td bgcolor="${innloggetDeltager.mobil eq d.mobil ? (innloggetDeltager.harBetalt ? '#aaffaa' : '#ffaaaa') : ''}"><c:out value="${d.fornavn} ${d.etternavn}" /></td>
+				<td><c:out value="${d.fornavn} ${d.etternavn}" /></td>
 			</tr>
 		</c:forEach>
 	</table>
