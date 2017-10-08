@@ -23,7 +23,7 @@ public class FlashUtil {
 	public static void flash(HttpServletRequest request, String flash, String melding) {
 		if (validateFlashType(flash)) {
 			request.getSession().setAttribute("flash", flash);
-			request.getSession().setAttribute("melding", melding);
+			request.getSession().setAttribute("flash_melding", melding);
 		}
 	}
 
