@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page
+<%@ page
 	import="static no.hvl.dat104.controller.UrlMappings.PAAMELDING_URL"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,17 +11,24 @@
 </head>
 <body>
 	<h2>Påmelding</h2>
-	<form action="<%= PAAMELDING_URL %>" method="post">
+	<c:if test="${flash == 'error'}">
+		<p style="color: red;">${flash_melding}</p>
+		<c:remove var="flash" scope="session" />
+	</c:if>
+	<form action="<%=PAAMELDING_URL%>" method="post">
 		<fieldset>
 			<legend>Personlige data</legend>
 			<p>
-				Fornavn: <input type="text" name="fornavn" placeholder="fornavn" />
+				Fornavn: <input type="text" name="fornavn" value="${fornavn}" /> <span
+					style="color: red;">${feilfornavn}</span>
 			</p>
 			<p>
-				Etternavn: <input type="text" name="etternavn" placeholder="etternavn" />
+				Etternavn: <input type="text" name="etternavn" value="${etternavn}" />
+				<span style="color: red;">${feiletternavn}</span>
 			</p>
 			<p>
-				Mobil (8 siffer): <input type="text" name="mobil" placeholder="mobil" />
+				Mobil (8 siffer): <input type="text" name="mobil" value="${mobil}" />
+				<span style="color: red;">${feilmobil}</span>
 			</p>
 			<p>
 				Kjønn: <input type="radio" name="kjoenn" value="mann"
