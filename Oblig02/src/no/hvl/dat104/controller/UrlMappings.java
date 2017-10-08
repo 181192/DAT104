@@ -14,5 +14,5 @@ public class UrlMappings {
 	public static final String KASSERERLOGIN_URL = "kassererlogin";
 	public static final String MOBILLOGIN_URL = "mobillogin";
 	public static final String PAAMELDING_URL = "paamelding";
-	public static final String PAAMELDINGSBEKREFTELSE_URL = "paameldingsbekreftelse";
+	public static final String PAAMELDINGSBEKREFTELSE_URL = "paameldingbekreftelse";
 }
