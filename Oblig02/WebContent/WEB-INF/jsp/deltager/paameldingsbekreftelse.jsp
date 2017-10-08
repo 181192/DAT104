@@ -12,12 +12,14 @@
 	<h2>Påmeldingsbekreftelse</h2>
 	<p>Påmeldingen er mottatt for</p>
 	<p>
-		&nbsp;&nbsp;&nbsp;Arne<br /> &nbsp;&nbsp;&nbsp;Arnesen<br />
-		&nbsp;&nbsp;&nbsp;90123456<br /> &nbsp;&nbsp;&nbsp;mann
+		&nbsp;&nbsp;&nbsp;${regDeltager.fornavn}<br />
+		&nbsp;&nbsp;&nbsp;${regDeltager.etternavn}<br />
+		&nbsp;&nbsp;&nbsp;${regDeltager.mobil}<br />
+		&nbsp;&nbsp;&nbsp;${regDeltager.erMann ? 'mann' : 'kvinne'}
 	</p>
 	<p>
 		<b>NB! Husk å betale til kassereren før festen!</b>
 	</p>
-	<a href="<%= DELTAGERLISTE_URL %>">Gå til deltagerlisten</a>
+	<a href="<%=DELTAGERLISTE_URL%>">Gå til deltagerlisten</a>
 </body>
 </html>
