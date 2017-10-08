@@ -1,5 +1,7 @@
 package no.hvl.dat104.controller.deltager;
 
+import static no.hvl.dat104.controller.UrlMappings.PAAMELDING_URL;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -15,8 +17,11 @@ public class PaameldingBekreftelseServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/deltager/paameldingsbekreftelse.jsp").forward(request, response);
-		;
+		if ((boolean) request.getSession().getAttribute("registrert")) {
+			request.getRequestDispatcher("WEB-INF/jsp/deltager/paameldingsbekreftelse.jsp").forward(request, response);
+		} else {
+			response.sendRedirect(PAAMELDING_URL);
+		}
 	}
 
 }
