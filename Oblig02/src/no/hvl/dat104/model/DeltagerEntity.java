@@ -14,11 +14,11 @@ import javax.persistence.Table;
  */
 @Entity(name = "DeltagerEntity")
 @Table(name = "deltager", schema = "fest", catalog = "DAT104")
-public class DeltagerEntity {
+public class DeltagerEntity implements Comparable<DeltagerEntity> {
 
 	@Id
 	private Integer mobil;
-	
+
 	private String fornavn;
 	private String etternavn;
 
@@ -64,7 +64,8 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param mobil the mobil to set
+	 * @param mobil
+	 *            the mobil to set
 	 */
 	public void setMobil(Integer mobil) {
 		this.mobil = mobil;
@@ -78,7 +79,8 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param fornavn the fornavn to set
+	 * @param fornavn
+	 *            the fornavn to set
 	 */
 	public void setFornavn(String fornavn) {
 		this.fornavn = fornavn;
@@ -92,7 +94,8 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param etternavn the etternavn to set
+	 * @param etternavn
+	 *            the etternavn to set
 	 */
 	public void setEtternavn(String etternavn) {
 		this.etternavn = etternavn;
@@ -106,7 +109,8 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param erMann the erMann to set
+	 * @param erMann
+	 *            the erMann to set
 	 */
 	public void setErMann(Boolean erMann) {
 		this.erMann = erMann;
@@ -120,7 +124,8 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param harBetalt the harBetalt to set
+	 * @param harBetalt
+	 *            the harBetalt to set
 	 */
 	public void setHarBetalt(Boolean harBetalt) {
 		this.harBetalt = harBetalt;
@@ -134,12 +139,19 @@ public class DeltagerEntity {
 	}
 
 	/**
-	 * @param erKasserer the erKasserer to set
+	 * @param erKasserer
+	 *            the erKasserer to set
 	 */
 	public void setErKasserer(Boolean erKasserer) {
 		this.erKasserer = erKasserer;
 	}
-	
-	
+
+	@Override
+	public int compareTo(DeltagerEntity o) {
+		if (this.fornavn.equals(o.fornavn)) {
+			return this.etternavn.compareTo(o.etternavn);
+		}
+		return this.fornavn.compareTo(o.fornavn);
+	}
 
 }
