@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page
 	import="static no.hvl.dat104.controller.UrlMappings.MOBILLOGIN_URL"%>
+<%@ page
+	import="static no.hvl.dat104.controller.UrlMappings.PAAMELDING_URL"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +32,11 @@
 			<p>
 				<input type="submit" value="Logg inn" />
 			</p>
+			<p>
+				eller for å melde deg på festen klikk <a href="<%=PAAMELDING_URL%>">
+					her </a>
+			</p>
+
 		</fieldset>
 	</form>
 
