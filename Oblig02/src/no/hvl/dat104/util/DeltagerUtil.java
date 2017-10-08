@@ -40,7 +40,8 @@ public class DeltagerUtil {
 	 * @param deltagerEAO
 	 *            DeltagerEAO
 	 */
-	public static void leggTilDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
+	public static DeltagerEntity leggTilDeltager(HttpServletRequest request, IDeltagerEAO deltagerEAO) {
+		DeltagerEntity d = null;
 		String fornavn = ValideringUtil.escapeHTML(request.getParameter("fornavn"));
 		String etternavn = ValideringUtil.escapeHTML(request.getParameter("etternavn"));
 		String mobil = ValideringUtil.escapeHTML(request.getParameter("mobil"));
@@ -49,9 +50,15 @@ public class DeltagerUtil {
 
 		if (ValideringUtil.validerFornavn(fornavn) && ValideringUtil.validerEtternavn(etternavn)
 				&& ValideringUtil.validerNummer(mobil)) {
-			DeltagerEntity d = new DeltagerEntity(Integer.parseInt(mobil), fornavn, etternavn, erMann, false, false);
-			deltagerEAO.leggTilDeltager(d);
+			Integer nummer = Integer.parseInt(mobil);
+			if (deltagerEAO.finnDeltager(nummer) != null) {
+				FlashUtil.flash(request, "error", "Beklager, deltageren er allerede registrert");
+			} else {
+				d = new DeltagerEntity(Integer.parseInt(mobil), fornavn, etternavn, erMann, false, false);
+				deltagerEAO.leggTilDeltager(d);
+			}
 		}
+		return d;
 	}
 
 }
