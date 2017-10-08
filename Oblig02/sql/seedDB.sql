@@ -13,6 +13,7 @@ CREATE TABLE fest.deltager(
 	PRIMARY KEY(mobil)
 );
 
+--Legger til test deltagere
 INSERT INTO fest.deltager (mobil, fornavn, etternavn, er_mann, har_betalt, er_kasserer) VALUES
 (45656778, 'Arne', 'Arnesen', true, true, true),
 (90123532, 'Peder', 'Pedersen', true, false, false),
