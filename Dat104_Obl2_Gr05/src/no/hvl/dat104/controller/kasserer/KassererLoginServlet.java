@@ -30,6 +30,7 @@ public class KassererLoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		if (InnlogginUtil.erInnlogget(request)) {
 			DeltagerEntity d = InnlogginUtil.erInnloggetSom(request);
+			System.out.println("Kasserer: " + d.getMobil());
 			if (d != null && d.getErKasserer()) {
 				FlashUtil.flash(request, "success", "Velkommen " + d.getFornavn() + " " + d.getEtternavn());
 				response.sendRedirect(BETALINGSOVERSIKT_URL);
@@ -50,13 +51,12 @@ public class KassererLoginServlet extends HttpServlet {
 			// TODO fikse bug med at getInitParameter returnerer null
 			// String timeout = getServletContext().getInitParameter("timeout");
 			String timeout = "30";
-			System.out.println("Logginnsom " + d.getMobil().toString());
+			System.out.println("Logginnsom " + d.getEtternavn());
 			InnlogginUtil.loggInnSom(request, d, timeout);
-			response.sendRedirect(BETALINGSOVERSIKT_URL);
 		} else {
 			FlashUtil.flash(request, "error", "Feil passord");
-			response.sendRedirect(KASSERERLOGIN_URL);
 		}
+		response.sendRedirect(KASSERERLOGIN_URL);
 	}
 
 }
