@@ -27,10 +27,8 @@
                 <option value="${k.kode}">${k.kode + " " + k.program}</option>
             </c:forEach>
         </select>
-
-
+        <input type="password" name="passord">
     </fieldset>
-
 </form>
 
 </body>
