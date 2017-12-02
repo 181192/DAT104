@@ -8,8 +8,8 @@
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:postgresql://kalliainen.ddns.net:5432/kalli"/>
             <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="eclipselink.jdbc.user" value=""/>
-            <property name="eclipselink.jdbc.password" value=""/>
+            <property name="eclipselink.jdbc.user" value="kalli"/>
+            <property name="eclipselink.jdbc.password" value="kalli"/>
         </properties>
     </persistence-unit>
 </persistence>
