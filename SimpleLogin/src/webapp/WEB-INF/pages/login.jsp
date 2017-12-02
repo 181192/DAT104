@@ -14,13 +14,9 @@
 
 <form action="<%=LOGIN_URL%>" method="post">
 
-    <div class="imgcontainer">
-        <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
     <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <label><b>StudentNr</b></label>
+        <input type="text" placeholder="Enter StudentNr" name="id" required>
 
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
