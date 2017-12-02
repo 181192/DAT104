@@ -25,26 +25,27 @@
             <p style="color: #B03060;">${registrerStudentSkjema.navnFeilmelding}</p>
             <c:remove var="registrerStudentSkjema" scope="session" />
         </c:if>
-        <input type="text" name="navn" value="${registrerStudentSkjema.navn}" placeholder="Navn">
+        <p><input type="text" name="navn" value="${registrerStudentSkjema.navn}" placeholder="Navn"></p>
 
         <c:if test="${not empty registrerStudentSkjema.klassekodeFeilmelding}">
             <p style="color: #B03060;">${registrerStudentSkjema.klassekodeFeilmelding}</p>
             <c:remove var="registrerStudentSkjema" scope="session" />
         </c:if>
-        <select name="klassekode">
+        <p><select name="klassekode">
             <c:forEach  items="${klasser}" var = "k">
                 <option
                         ${registrerStudentSkjema.klasseKode eq k.kode ? 'selected="selected"' : ''}
                         value="${k.kode}">${k.kode + " " + k.program}
                 </option>
             </c:forEach>
-        </select>
+        </select></p>
 
         <c:if test="${not empty registrerStudentSkjema.passordFeilmelding}">
             <p style="color: #B03060;">${registrerStudentSkjema.passordFeilmelding}</p>
             <c:remove var="registrerStudentSkjema" scope="session" />
         </c:if>
-        <input type="password" name="passord" value="${registrerStudentSkjema.passord}" placeholder="Passord">
+        <p><input type="password" name="passord" value="${registrerStudentSkjema.passord}" placeholder="Passord"></p>
+        <p><input type="submit" value="Registrer"></p>
     </fieldset>
 </form>
 

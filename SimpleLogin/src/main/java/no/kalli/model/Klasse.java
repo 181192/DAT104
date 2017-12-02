@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "klasse")
 @Table(schema = "student", name = "klasse")
 public class Klasse {
     @Id

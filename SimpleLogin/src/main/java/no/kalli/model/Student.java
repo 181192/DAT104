@@ -2,7 +2,7 @@ package no.kalli.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "student")
 @Table(schema = "student", name = "student")
 public class Student {
     @Id
