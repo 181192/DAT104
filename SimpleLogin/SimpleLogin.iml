@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+        <sourceRoots />
+      </configuration>
+    </facet>
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <setting name="provider-name" value="" />
+        <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="studentPersistenceUnit" />
+          <factory-entry name="NewPersistenceUnit" value="98b91b56-e44d-406b-83c1-e9b957a9377d" />
+          <factory-entry name="studentPersistenceUnit" value="fd8d29ce-6007-4be7-8056-f528ea25eb7f" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/java/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/.idea/workspace.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/.idea" relative="/WEB-INF" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
       </configuration>
     </facet>
   </component>
@@ -17,10 +43,14 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-all:1.9.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:2.12.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.7.9" level="project" />
@@ -37,6 +67,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents:httpmime:4.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.htmlunit:htmlunit-core-js:2.17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: xerces:xercesImpl:2.11.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: xml-apis:xml-apis:1.4.01" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.nekohtml:nekohtml:1.9.22" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.sourceforge.cssparser:cssparser:0.9.16" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.w3c.css:sac:1.3" level="project" />
@@ -52,12 +84,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-api:1.6.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.4" level="project" />
-    <orderEntry type="library" name="Maven: xerces:xercesImpl:2.9.1" level="project" />
-    <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.3.04" level="project" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
   </component>
 </module>
