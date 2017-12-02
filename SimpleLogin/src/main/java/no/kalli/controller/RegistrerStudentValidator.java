@@ -53,7 +53,6 @@ public class RegistrerStudentValidator {
             navnFeilmelding = "Navn er ikke gyldig";
         }
         if (!erKlassekodeGyldig()) {
-            klasseKode = "";
             klasseKodeFeilmelding = "Mailadressen er ikke gyldig";
         }
         if (!erPassordGyldig()) {
