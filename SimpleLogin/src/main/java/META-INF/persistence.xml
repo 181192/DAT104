@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-    <persistence-unit name="studentPersistenceUnit">
+    <persistence-unit name="studentPersistenceUnit" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>myDataSource</jta-data-source>
         <class>no.kalli.model.Klasse</class>
         <class>no.kalli.model.Student</class>
         <properties>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://kalliainen.ddns.net:5432/kalli"/>
-            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="eclipselink.jdbc.user" value="kalli"/>
-            <property name="eclipselink.jdbc.password" value="kalli"/>
+            <property name="tomee.jpa.cdi" value="false" />
         </properties>
     </persistence-unit>
 </persistence>

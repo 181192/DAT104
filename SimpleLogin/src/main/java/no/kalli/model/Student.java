@@ -5,10 +5,18 @@ import javax.persistence.*;
 @Entity
 @Table(schema = "student", name = "student")
 public class Student {
+    @Id
+    @Column(name = "id")
     private String id;
+    @Column(name = "navn")
     private String navn;
+    @Column(name = "passord")
     private String passord;
+    @Column(name = "salt")
     private String salt;
+
+    @ManyToOne
+    @JoinColumn(name = "klasse_kode", referencedColumnName = "kode")
     private Klasse klasseByKlasseKode;
 
     public Student() {
@@ -22,9 +30,6 @@ public class Student {
         this.salt = salt;
         this.klasseByKlasseKode = klasseByKlasseKode;
     }
-
-    @Id
-    @Column(name = "id")
     public String getId() {
         return id;
     }
@@ -33,8 +38,6 @@ public class Student {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "navn")
     public String getNavn() {
         return navn;
     }
@@ -43,8 +46,6 @@ public class Student {
         this.navn = navn;
     }
 
-    @Basic
-    @Column(name = "passord")
     public String getPassord() {
         return passord;
     }
@@ -53,8 +54,6 @@ public class Student {
         this.passord = passord;
     }
 
-    @Basic
-    @Column(name = "salt")
     public String getSalt() {
         return salt;
     }
@@ -63,24 +62,11 @@ public class Student {
         this.salt = salt;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "klasse_kode", referencedColumnName = "kode")
     public Klasse getKlasseByKlasseKode() {
         return klasseByKlasseKode;
     }
 
     public void setKlasseByKlasseKode(Klasse klasseByKlasseKode) {
         this.klasseByKlasseKode = klasseByKlasseKode;
-    }
-
-    private Klasse klasses;
-
-    @ManyToOne(optional = false)
-    public Klasse getKlasses() {
-        return klasses;
-    }
-
-    public void setKlasses(Klasse klasses) {
-        this.klasses = klasses;
     }
 }

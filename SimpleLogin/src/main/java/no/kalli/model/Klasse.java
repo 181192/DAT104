@@ -3,19 +3,21 @@ package no.kalli.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(schema = "student", name = "klasse")
 public class Klasse {
+    @Id
+    @Column(name = "kode")
     private String kode;
+    @Column(name = "program")
     private String program;
 
-    @OneToMany(mappedBy = "klasses", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "klasseByKlasseKode", fetch = FetchType.EAGER)
     private List<Student> studenter;
 
     public Klasse() {
-        this("","");
+        this("", "");
         this.studenter = new ArrayList<Student>();
     }
 
@@ -25,8 +27,6 @@ public class Klasse {
         this.studenter = new ArrayList<Student>();
     }
 
-    @Id
-    @Column(name = "kode")
     public String getKode() {
         return kode;
     }
@@ -35,8 +35,6 @@ public class Klasse {
         this.kode = kode;
     }
 
-    @Basic
-    @Column(name = "program")
     public String getProgram() {
         return program;
     }
@@ -44,7 +42,6 @@ public class Klasse {
     public void setProgram(String program) {
         this.program = program;
     }
-
 
     public List<Student> getStudenter() {
         return studenter;
