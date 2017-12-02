@@ -1,15 +1,29 @@
 package no.kalli.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(schema = "student", name = "klasse")
 public class Klasse {
     private String kode;
     private String program;
+
+    @OneToMany(mappedBy = "klasses", fetch = FetchType.EAGER)
+    private List<Student> studenter;
+
+    public Klasse() {
+        this("","");
+        this.studenter = new ArrayList<Student>();
+    }
+
+    public Klasse(String kode, String program) {
+        this.kode = kode;
+        this.program = program;
+        this.studenter = new ArrayList<Student>();
+    }
 
     @Id
     @Column(name = "kode")
@@ -31,18 +45,12 @@ public class Klasse {
         this.program = program;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Klasse klasse = (Klasse) o;
-        return Objects.equals(kode, klasse.kode) &&
-                Objects.equals(program, klasse.program);
+
+    public List<Student> getStudenter() {
+        return studenter;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(kode, program);
+    public void setStudenter(List<Student> studenter) {
+        this.studenter = studenter;
     }
 }

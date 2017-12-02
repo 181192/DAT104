@@ -1,15 +1,27 @@
 package no.kalli.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
+@Table(schema = "student", name = "student")
 public class Student {
     private String id;
     private String navn;
     private String passord;
     private String salt;
     private Klasse klasseByKlasseKode;
+
+    public Student() {
+        this("", "", "", "", null);
+    }
+
+    public Student(String id, String navn, String passord, String salt, Klasse klasseByKlasseKode) {
+        this.id = id;
+        this.navn = navn;
+        this.passord = passord;
+        this.salt = salt;
+        this.klasseByKlasseKode = klasseByKlasseKode;
+    }
 
     @Id
     @Column(name = "id")
@@ -51,23 +63,6 @@ public class Student {
         this.salt = salt;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return Objects.equals(id, student.id) &&
-                Objects.equals(navn, student.navn) &&
-                Objects.equals(passord, student.passord) &&
-                Objects.equals(salt, student.salt);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id, navn, passord, salt);
-    }
-
     @ManyToOne
     @JoinColumn(name = "klasse_kode", referencedColumnName = "kode")
     public Klasse getKlasseByKlasseKode() {
@@ -76,5 +71,16 @@ public class Student {
 
     public void setKlasseByKlasseKode(Klasse klasseByKlasseKode) {
         this.klasseByKlasseKode = klasseByKlasseKode;
+    }
+
+    private Klasse klasses;
+
+    @ManyToOne(optional = false)
+    public Klasse getKlasses() {
+        return klasses;
+    }
+
+    public void setKlasses(Klasse klasses) {
+        this.klasses = klasses;
     }
 }
