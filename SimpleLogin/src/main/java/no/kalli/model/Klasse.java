@@ -13,7 +13,7 @@ public class Klasse {
     @Column(name = "program")
     private String program;
 
-    @OneToMany(mappedBy = "klasseByKlasseKode", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "klasseByKlasseKode", fetch = FetchType.LAZY)
     private List<Student> studenter;
 
     public Klasse() {

@@ -31,12 +31,7 @@ public class KlasseEAO {
     }
 
     public List<Klasse> alleKlasser() {
-        List<Klasse> klasser = new ArrayList<Klasse>();
-        klasser.addAll(em.createQuery("select k from klasse k").getResultList());
-        System.out.println("Yoo");
-        for (Klasse k : klasser) {
-            System.out.println(k.getKode());
-        }
+        List<Klasse> klasser = em.createQuery("select k from klasse k").getResultList();
         return klasser;
     }
 }

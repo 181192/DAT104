@@ -17,7 +17,7 @@ public class RegistrerStudentValidator {
     public RegistrerStudentValidator(HttpServletRequest request) {
         id = request.getParameter("id");
         navn = request.getParameter("navn");
-        klasseKode = request.getParameter("klassekode");
+        klasseKode = request.getParameter("klasseKode");
         passord = request.getParameter("passord");
         salt = request.getParameter("salt");
     }
@@ -53,7 +53,7 @@ public class RegistrerStudentValidator {
             navnFeilmelding = "Navn er ikke gyldig";
         }
         if (!erKlassekodeGyldig()) {
-            klasseKodeFeilmelding = "Mailadressen er ikke gyldig";
+            klasseKodeFeilmelding = "Klassekoden er ikke gyldig";
         }
         if (!erPassordGyldig()) {
             passord = "";

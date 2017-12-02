@@ -42,7 +42,7 @@ public class StudentEAO {
     }
 
     public List<Student> alleStudenter() {
-        return em.createQuery("select s from Student s").getResultList();
+        return em.createQuery("select s from student s").getResultList();
     }
 
 }

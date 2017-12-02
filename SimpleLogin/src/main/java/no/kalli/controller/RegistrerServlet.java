@@ -31,6 +31,7 @@ public class RegistrerServlet extends javax.servlet.http.HttpServlet {
             String passord = PassordUtil.hashPassord(skjema.getPassord(), s.getSalt());
             s.setPassord(passord);
             studentEAO.leggTilStudent(s, skjema.getKlasseKode());
+            response.sendRedirect(UrlMapping.LOGIN_URL);
         } else {
             skjema.settOppFeilmeldinger(request);
             FlashUtil.Flash(request, "error", "Ugyldig input");

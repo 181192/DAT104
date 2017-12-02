@@ -4,7 +4,6 @@
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
     <persistence-unit name="studentPersistenceUnit" transaction-type="JTA">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>myDataSource</jta-data-source>
         <class>no.kalli.model.Klasse</class>
         <class>no.kalli.model.Student</class>
