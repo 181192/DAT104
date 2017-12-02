@@ -20,6 +20,7 @@ public class RegistrerServlet extends javax.servlet.http.HttpServlet {
         RegistrerStudentValidator skjema = new RegistrerStudentValidator(request);
         if (skjema.erAlleDataGyldig()) {
             Student s = new Student();
+            s.setId(skjema.getId());
             s.setNavn(skjema.getNavn());
             setOppSalt(s);
             String passord = PassordUtil.hashPassord(skjema.getPassord(), s.getSalt());

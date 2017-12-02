@@ -3,20 +3,27 @@ package no.kalli.controller;
 import javax.servlet.http.HttpServletRequest;
 
 public class RegistrerStudentValidator {
+    private String id;
     private String navn;
     private String klasseKode;
     private String passord;
     private String salt;
 
+    private String idFeilmelding;
     private String navnFeilmelding;
     private String klasseKodeFeilmelding;
     private String passordFeilmelding;
 
     public RegistrerStudentValidator(HttpServletRequest request) {
+        id = request.getParameter("id");
         navn = request.getParameter("navn");
         klasseKode = request.getParameter("klassekode");
         passord = request.getParameter("passord");
         salt = request.getParameter("salt");
+    }
+
+    private boolean erIdGyldig() {
+        return id != null && !id.equals("");
     }
 
     private boolean erNavnGyldig() {
@@ -36,6 +43,10 @@ public class RegistrerStudentValidator {
     }
 
     public void settOppFeilmeldinger(HttpServletRequest request) {
+        if (!erIdGyldig()) {
+            id = "";
+            id = "Studentnummer er ikke gyldig";
+        }
 
         if (!erNavnGyldig()) {
             navn = "";
@@ -49,6 +60,22 @@ public class RegistrerStudentValidator {
             passord = "";
             passordFeilmelding = "Passord er ikke gyldig";
         }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getIdFeilmelding() {
+        return idFeilmelding;
+    }
+
+    public void setIdFeilmelding(String idFeilmelding) {
+        this.idFeilmelding = idFeilmelding;
     }
 
     public String getNavn() {
