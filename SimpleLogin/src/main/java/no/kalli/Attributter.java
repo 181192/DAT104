@@ -5,8 +5,4 @@ public class Attributter {
     public static final String STUDENTER = "studenter";
     public static final String KLASSE = "klasse";
     public static final String KLASSER = "klasser";
-
-    public static void main(String[] args) {
-        System.getenv().get("PASSWD");
-    }
 }
